@@ -484,3 +484,55 @@
                 }
             }
         },
+        "Artisan": {
+            "required": [
+                "full_name",
+                "image",
+                "mobile",
+                "amount",
+                "state",
+                "localgovt"
+            ],
+            "properties": {
+                "full_name": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "image": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "mobile": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "amount": {
+                    "type": "number",
+                    "uniqueItems": false
+                },
+                "state": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "localgovt": {
+                    "type": "object",
+                    "uniqueItems": false
+                }
+            }
+        },
+        "Thrifts": {
+            "required": [
+                "artisan_id",
+                "amount"
+            ],
+            "properties": {
+                "artisan_id": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "amount": {
+                    "type": "string",
+                    "uniqueItems": false
+                }
+            }
+        },
