@@ -1,0 +1,316 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Tro Vest Capital",
+        "description": "Manage the Api",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": [
+        "localhost:5100/"
+    ],
+    "basePath": "",
+    "tags": [],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "url": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "File Upload": {},
+        "/api/file/uploadFile": {
+            "post": {
+                "summary": "File Upload",
+                "tags": [
+                    "File"
+                ],
+                "consumes": "application/json",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "file",
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/request/Metadata": {
+            "post": {
+                "tags": [
+                    "Blood Group"
+                ],
+                "required": [],
+                "properties": {
+                    "bloodgroup": {
+                        "type": "object",
+                        "uniqueItems": false
+                    }
+                }
+            }
+        },
+        "Admin": {},
+        "/api/v1/admin/create-admin": {
+            "post": {
+                "summary": "Create Admin",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": "application/json",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "create admin",
+                        "schema": {
+                            "$ref": "#/definitions/Admin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/create-agent": {
+            "post": {
+                "summary": "Create Admin",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": "application/json",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                       "bearerAuth": [] 
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "create admin",
+                        "schema": {
+                            "$ref": "#/definitions/Agent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/login-admin": {
+            "post": {
+                "summary": "Login Admin",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": "multipart/form-data",
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "Login",
+                        "in": "body",
+                        "description": "Login Admin",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/get-admin": {
+            "get": {
+                "summary": "Get Admin",
+                "tags": [
+                    "Admin"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                       "bearerAuth": [] 
+                    }
+                ],
+                "consumes": "application/json",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "Agent": {},
+        "/api/v1/agent/login-agent": {
+            "post": {
+                "summary": "Login Agent",
+                "tags": [
+                    "Agent"
+                ],
+                "consumes": "multipart/form-data",
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "Login",
+                        "in": "body",
+                        "description": "Login Userl",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/agent/create-artisan": {
+            "post": {
+                "summary": "Create Artisan",
+                "tags": [
+                    "Agent"
+                ],
+                "consumes": "application/json",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "create user",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/agent/get-artisan": {
+            "get": {
+                "summary": "Select Artisan",
+                "tags": [
+                    "Agent"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "params",
+                        "required": true,
+                        "description": "Id of artisan",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/agent/get-artisans": {
+            "get": {
+                "summary": "Select Artisan",
+                "tags": [
+                    "Agent"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Filter user"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Filter user"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
