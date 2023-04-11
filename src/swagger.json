@@ -314,3 +314,173 @@
                 }
             }
         },
+        "/api/v1/agent/update-user": {
+            "put": {
+                "summary": "User Agent",
+                "tags": [
+                    "Agent"
+                ],
+                "consumes": "application/json",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "user id"
+                    },
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "update user detail",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/agent/forget-password": {
+            "put": {
+                "tags": [
+                    "Agent"
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "forget password",
+                        "schema": {
+                            "$ref": "#/definitions/updatepassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "name": "authorization",
+            "in": "header"
+        },
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "token",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "Admin": {
+            "required": [
+                "first_name",
+                "last_name",
+                "username",
+                "image",
+                "mobile",
+                "email",
+                "password"
+            ],
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "last_name": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "username": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "image": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "mobile": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "email": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "password": {
+                    "type": "string",
+                    "uniqueItems": false
+                }
+            }
+        },
+        "Agent": {
+            "required": [
+                "first_name",
+                "last_name",
+                "username",
+                "image",
+                "mobile",
+                "email",
+                "password",
+                "localgovt",
+                "state"
+            ],
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "last_name": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "username": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "image": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "mobile": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "email": {
+                    "type": "number",
+                    "uniqueItems": false
+                },
+                "password": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "localgovt": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "state": {
+                    "type": "string",
+                    "uniqueItems": false
+                }
+            }
+        },
