@@ -536,3 +536,63 @@
                 }
             }
         },
+        "Collections": {
+            "required": [
+                "agent_id",
+                "total",
+                "artisan_id",
+                "payment_reference"
+            ],
+            "properties": {
+                "agent_id": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "total": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "artisan_id": {
+                    "type": "string",
+                    "uniqueItems": false
+                },
+                "payment_reference": {
+                    "type": "number",
+                    "uniqueItems": false
+                }
+            }
+        },
+        "updatepassword": {
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "uniqueItems": "false"
+                },
+                "password": {
+                    "type": "string",
+                    "uniqueItems": "false"
+                }
+            }
+        },
+        "login": {
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "uniqueItems": "false"
+                },
+                "password": {
+                    "type": "string",
+                    "uniqueItems": "false"
+                }
+            }
+        }
+    }
+}
