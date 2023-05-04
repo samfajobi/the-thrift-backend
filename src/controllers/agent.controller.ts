@@ -107,7 +107,7 @@ const createArtisan = async (req: any, res: Response, next: NextFunction) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const addMyArtisan = async (req: any, res: Response) => {
     try {
@@ -139,7 +139,7 @@ const addMyArtisan = async (req: any, res: Response) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const getArtisans = async (req: any, res: Response) => {
     try {
@@ -157,7 +157,7 @@ const getArtisans = async (req: any, res: Response) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const getArtisan = async (req: Request, res: Response) => {
     try {
@@ -179,7 +179,7 @@ const getArtisan = async (req: Request, res: Response) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const collectThrift = async (req: any, res: Response, next: NextFunction) => {
     try {
@@ -232,7 +232,7 @@ const collectThrift = async (req: any, res: Response, next: NextFunction) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const updateAgentCollection = async (req: any, res: Response) => {
     try {
@@ -335,7 +335,7 @@ const updateAgentCollection = async (req: any, res: Response) => {
         ERROR_MSG.ERROR.message = error.message
         res.status(500).json(ERROR_MSG.ERROR)
     }
-}
+};
 
 const sendMessageToArtisan = async (req: any, res: Response) => {
     try {
